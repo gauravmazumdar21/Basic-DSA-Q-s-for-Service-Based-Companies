@@ -9,9 +9,12 @@ arr = list(map(int, input("Enter the array: ").split()))
 repeated_arr = []
 
 for i in range(len(arr)):
-    for j in range(1,len(arr)):
+    for j in range(i+1,len(arr)):
         if arr[i] == arr[j]:
-            repeated_arr.append(arr[i])
-            continue
+            if arr[i] in repeated_arr:
+                continue
+            else:
+                repeated_arr.append(arr[i])
+            
 
 print(repeated_arr)
