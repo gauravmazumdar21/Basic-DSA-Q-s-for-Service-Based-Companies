@@ -17,11 +17,14 @@ arr = list(map(int, input("Enter the array: ").split()))
 
 products_arr = []
 
-product = 1
+
+# Whenever find all the subarrays use 3 loops
+
 for i in range(len(arr)):
-    j = i
-    for j in range(len(arr)):
-        product *= arr[j]
+    for j in range(i+1,len(arr)):
+        product = 1
+        for k in range(i,j+1):
+            product *= arr[k]
         products_arr.append(product)     
 
-print(products_arr)
+print(max(products_arr))
